@@ -1,0 +1,67 @@
+{% extends 'classroom/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container ">
+		<div class="row">
+            <ol class="col-12 breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item active">Inbox</li>
+            </ol>
+
+        </div>
+
+       <div class="section-heading">
+            <h2>Inbox</h2>
+            <div class="line-dec"></div>
+
+          </div>
+
+ {% if teacher.messages.count == 0 %}
+  <h2 class=" text-center">No messages yet.</h2>
+  {% else %}
+  {% for mssg in teacher.messages.all %}
+
+  <div class="notice">
+  <div class="row">
+
+    <div class="col-12 col-md-12">
+<div class="card card-body bg-dark">
+      <div class="notice-details">
+        <div class="row align-items-center">
+
+        <div class="col-2">
+{% if mssg.student.student_profile_pic %}
+        <img src="{{ mssg.student.student_profile_pic.url }}" class="notice-img">
+        {% else %}
+        <img src="{% static 'images/s_profile.png' %}" class="notice-img">
+        {% endif %}
+        </div>
+
+
+<div class="offset-2 col-8">
+    <div class="row">
+        <div class="col-md-6">
+          <h5>By: {{ mssg.student.name }}</h5>
+        </div>
+
+        <div class="col-md-6">
+          <h5>{{ mssg.created_at }}</h5>
+        </div>
+
+        </div>
+ </div>
+  </div>
+        </div>
+        <hr>
+         <h2 class="text-white">{{ mssg.message_html|safe }}</h2>
+        </div>
+    </div>
+  </div>
+  </div>
+  <br>
+  {% endfor %}
+  {% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends 'classroom/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+	<div class="row">
+            <ol class="col-12 breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                 <li class="breadcrumb-item"><a href="{% url 'classroom:signup' %}">Sign Up</a></li>
+                <li class="breadcrumb-item active">Student</li>
+            </ol>
+
+        </div>
+
+    {% if registered %}
+    <h1 class="text-center">Thank you for registering.</h1>
+    {% else %}
+   <div class="section-heading">
+            <h2>Sign up as a Student</h2>
+            <div class="line-dec"></div>
+
+          </div>
+
+             <div class="row row-content align-text-center text-white ">
+	<div class="col-12 col-md-9 offset-sm-1">
+             <div class="col-12">
+                <div class="card card-body  bg-dark">
+
+
+
+    <form method="post">
+      {% csrf_token %}
+
+     {{ student_profile_form.non_field_errors }}
+
+  		<div class="form-group row">
+                        <label for="" class=" col-md-3 col-form-label">Name <strong class="text-warning">*</strong></label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" required id="name" name="name" placeholder="Full Name">
+                        </div>
+                    </div>
+
+            	<div class="form-group row">
+                        <label for="" class=" col-md-3 col-form-label">Roll No <strong class="text-warning">*</strong></label>
+                        <div class="col-md-9">
+                            <input type="tel" class="form-control" required id="telnum" name="roll_no" placeholder="Roll Number">
+                        </div>
+                    </div>
+
+            	<div class="form-group row">
+                        <label for="" class=" col-md-3 col-form-label">Phone <strong class="text-warning">*</strong></label>
+                        <div class="col-md-9">
+                            <input type="tel" class="form-control" required id="telnum" name="phone" placeholder="Tel. number">
+                        </div>
+                    </div>
+
+            	<div class="form-group row">
+                        <label for="" class=" col-md-3 col-form-label">Email <strong class="text-warning">*</strong></label>
+                        <div class="col-md-9">
+                            <input type="email" class="form-control" required id="emailid" name="email" placeholder="abc@xyz.com">
+                        </div>
+                    </div>
+
+
+      {{ user_form.non_field_errors }}
+
+
+    <div class="form-group row">
+                        <label for="" class=" col-md-3 col-form-label">Username <strong class="text-warning">*</strong></label>
+                        <div class="col-md-9">
+                         <input type="text" class="form-control" required id="name" name="username" placeholder="Username">
+                            <p>  <small> Letters, digits and @/./+/-/_ only.</small></p>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class=" col-md-3 col-form-label">Password <strong class="text-warning">*</strong></label>
+                        <div class="col-md-9">
+                          <input type="password" class="form-control" placeholder="Enter Password" name="password1" required>
+                          <p>  <small> Use minimum 8 Characters with numericals. </small></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class=" col-md-3 col-form-label">Password Confirmation<strong class="text-warning">*</strong></label>
+                        <div class="col-md-9">
+                          <input type="password" class="form-control" placeholder="Enter Password" name="password2" required>
+                           <p>  <small> {{ user_form.password2.help_text }} </small></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group row ">
+                        <div class="offset-md-3 col-md-4">
+                            <input class="btn btn-block btn-info" type="submit" name="" value="Sign Up">
+                        </div>
+                    </div>
+    </form>
+
+    <a class="offset-md-3" href="{% url 'classroom:login' %}">Already have an account.</a>
+    {% endif %}
+  </div>
+    <br>
+  <br>
+</div>
+  </div>
+</div>
+</div>
+
+{% endblock %}
+
+
+

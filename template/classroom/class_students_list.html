@@ -1,0 +1,74 @@
+{% extends "classroom/base.html" %}
+{% load static %}
+{% block content %}
+<div class="container ">
+		<div class="row">
+            <ol class="col-12 breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item active">Class Students</li>
+            </ol>
+
+        </div>
+
+       <div class="section-heading">
+            <h2>Class Students</h2>
+            <div class="line-dec"></div>
+
+          </div>
+
+  {% if class_students_list.count == 0 %}
+    <h1>No students in the class.</h1>
+    {% else %}
+
+      <form method='GET' action="{% url 'classroom:class_student_list' %}" >
+     <div class="input-group md-form form-sm form-2 pl-0">
+     <input class="form-control my-0 py-1" type='search' name='q' placeholder='Type Name to Search...' aria-label="Search">
+     <div class="input-group-append">
+    <button  class="input-group-text lime lighten-2 btn-outline-success " type="submit"><i class="fas fa-search text-grey" aria-hidden="true"></i></button>
+   <input type="submit" value="Cancel" class="btn btn-danger pull-right" onclick="window.location.href='{% url 'classroom:class_student_list' %}'; return false;">
+  </div>
+</div>
+  </form>
+
+  <div class="row">
+  {% for student in class_students_list %}
+<div class="col-12 col-sm-4 ">
+<br>
+     <div class="hovereffect img-fluid img-thumbnail">
+       {% if student.student_profile_pic %}
+      <img src="{{ student.student_profile_pic.url }}" alt="">
+      {% else %}
+      {% if forloop.counter0|divisibleby:"2" %}
+      <img src="{% static 'images/s1.png' %}" alt="">
+      {% else %}
+      <img src="{% static 'images/s2.png' %}" alt="">
+      {% endif %}
+      {% endif %}
+
+        <div class="overlay">
+           <h2 class="font-weight-bold">{{ student.name }}</h2>
+      <div class="card card-body bg-dark d-flex p-5">
+       <p><i class="far fa-user"></i> Username: {{ student.user.username }}</p>
+      <p><i class="fal fa-user-tag"></i> Roll No.: {{ student.roll_no }}</p>
+      <p><i class="far fa-phone"></i> Phone: {{ student.phone }}</p>
+      <p><i class="far fa-envelope-open-text"></i> Email ID: {{ student.email }}</p>
+      <br>
+      <br>
+      <button class="btn btn-info">
+          <a class="nav-link text-white" href="{% url 'classroom:student_marks_list' pk=student.pk %}"> View Marks Profile</a>
+      </button>
+
+</div>
+        </div>
+    </div>
+
+    </div>
+  {% endfor %}
+  </div>
+  {% endif %}
+  <br>
+  <br>
+</div>
+
+
+{% endblock %}

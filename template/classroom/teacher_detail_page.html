@@ -1,0 +1,60 @@
+{% extends 'classroom/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container ">
+		<div class="row">
+            <ol class="col-12 breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item active">Profile</li>
+            </ol>
+
+        </div>
+
+       <div class="section-heading">
+            <h2>My Profile</h2>
+            <div class="line-dec"></div>
+
+          </div>
+
+<div class="card card-body bg-dark">
+    <div class="row">
+<div class="col-12 col-sm-4">
+  {% if teacher.teacher_profile_pic %}
+      <img class="img-fluid img-thumbnail rounded " style="width:100%" src="{{ teacher.teacher_profile_pic.url }}" >
+    {% else %}
+            <img class="img-fluid img-thumbnail rounded " style="width:100%" src="{% static 'images/t_profile.png' %}" alt="">
+    {% endif %}
+</div>
+
+<div class="col-12 col-sm-8 text-justify text-white text-center">
+    <div class="card card-body bg-info">
+   <h1>{{ teacher.name }}</h1>
+    <br>
+          <p><i class="far fa-user"></i> Username: {{ teacher.user.username }}</p>
+      <p><i class="fas fa-books"></i> Subject Name: {{ teacher.subject_name }}</p>
+      <p><i class="far fa-phone"></i> Phone: {{ teacher.phone }}</p>
+      <p><i class="far fa-envelope-open-text"></i> Email ID: {{ teacher.email }}</p>
+    <br>
+
+        <div class="row">
+<div class="col-5 offset-sm-2 col-sm-4 offset-sm-2">
+        <p><a class="btn btn-primary" href="{% url 'classroom:teacher_update' pk=user.pk %}">Edit profile</a></p>
+         </div>
+
+        <div class="col-7 col-sm-4 ">
+              <p><a class="btn btn-danger" href="{% url 'classroom:change_password' %}">Change Password</a></p>
+
+              </div>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+<br>
+</div>
+
+
+{% endblock %}

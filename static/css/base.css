@@ -1,0 +1,503 @@
+.login-page body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+nav{
+  width: 100%;
+  background: #00316b;
+  margin-bottom: 0;
+}
+
+ul{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: none;
+    margin-bottom: 0;
+    background: #00316b;
+}
+
+ul li{
+  list-style: none;
+  display: block;
+  padding: 5px;
+  text-align: center;
+  margin: 0;
+}
+ul li:hover{
+  background: #e91e63;
+  display: block;
+  margin-bottom: 0;
+}
+ul li a
+{
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+.active{
+  display: block;
+}
+
+/* INDEX HOME PAGE ############################################# */
+
+.banner{
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #3475ca;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1.0;
+  background-attachment: fixed;
+}
+.banner .content{
+  position: relative;
+
+  text-align: center;
+  color: white;
+  font-weight: 600;
+}
+
+.banner .content{
+  font-size: 20px;
+}
+
+.about{
+  position: relative;
+  background: #00316b;
+  color: white;
+  text-align: center;
+  padding: 100px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.use-content{
+  background: #e91e63;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+}
+
+.use-content h1{
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.research{
+
+  padding:5%;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+}
+
+.research img{
+  width:100%;
+  height: 100%;
+}
+
+.research .digital-content{
+
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+
+.notice{
+  margin-top: 50px;
+}
+
+.notice .notice-details{
+  background: #c7c7c5;
+  padding: 10px;
+  color: black;
+}
+
+.notice .notice-img{
+  width:85px;
+  height:85px;
+  border-radius: 50%;
+}
+
+/* INDEX HOME PAGE ############################################# */
+
+.section-heading {
+    text-align: center;
+
+}
+
+.section-heading h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.section-heading .line-dec {
+    width: 60px;
+    height: 3px;
+    background-color: #a43f49;
+    margin: 10px auto;
+}
+
+.section-heading span {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+/* INDEX HOME PAGE ############################################# */
+
+.bg {
+  /* The image used */
+
+  /* Full height */
+  height: 100%;
+	width:100%;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer{
+	background:#e91e63;
+	color: floralwhite;
+	margin: 0px auto;
+	padding: 20px 0px 20px 0px;
+}
+
+
+/* INDEX HOME PAGE ############################################# */
+
+
+.social-network {
+    margin-top: 60px;
+}
+
+.social-network span {
+    margin: 0 3px;
+}
+
+ .social-network span a {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.5s;
+}
+
+ .social-network span a:hover {
+    background-color: #fff;
+    color: #a43f49;
+}
+
+/* INDEX HOME PAGE ############################################# */
+
+
+/* Buttons */
+
+.white-button a {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #fff;
+    color: #a43f49;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+
+.white-button a:hover {
+    background-color: #a43f49;
+    color: #fff;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #a43f49;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+button:hover {
+    outline: none;
+    background-color: #a43f49;
+    color: #fff;
+}
+
+/* Services */
+/* INDEX HOME PAGE ############################################# */
+
+
+
+.service-item {
+    margin-bottom: 9px;
+    padding: 5%;
+    background-color: rgba(250, 250, 250, 0.1);
+    transition: all 0.5s;
+
+}
+
+.service-item h4 {
+    transition: all 0.5s;
+}
+
+.service-item p {
+    transition: all 0.5s;
+}
+
+.service-item:hover {
+    background-color: rgba(250, 250, 250, 1);
+    color:black;
+}
+
+.service-item:hover h4 {
+    color: #1e1e1e;
+}
+
+.service-item:hover p {
+    color: #4a4a4a;
+}
+
+.service-item .service-icon {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    margin-bottom: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
+}
+
+/* INDEX HOME PAGE ############################################# */
+
+.hovereffect {
+
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+.hovereffect .overlay {
+      width: 100%;
+  height: 100%;
+
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  background-color: rgba(0,0,0,0.5);
+  -webkit-transition: all 0.4s cubic-bezier(0.88,-0.99, 0, 1.81);
+  transition: all 0.4s cubic-bezier(0.88,-0.99, 0, 1.81);
+}
+
+.hovereffect img {
+    width:100%;
+    height:400px;
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.4s cubic-bezier(0.88,-0.99, 0, 1.81);
+  transition: all 0.4s cubic-bezier(0.88,-0.99, 0, 1.81);
+
+}
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  background: rgba(0,0,0,0.6);
+  -webkit-transform: translatey(-100px);
+  -ms-transform: translatey(-100px);
+  transform: translatey(-100px);
+  -webkit-transition: all 0.4s cubic-bezier(0.88,-0.99, 0, 1.81);
+  transition: all 0.4s cubic-bezier(0.88,-0.99, 0, 1.81);
+  padding: 10px;
+}
+
+.hovereffect a.info {
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: transparent;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  margin: 50px 0 0;
+  padding: 7px 14px;
+}
+
+.hovereffect a.info:hover {
+  box-shadow: 0 0 5px #fff;
+}
+
+.hovereffect:hover img {
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.hovereffect:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.hovereffect:hover h2,.hovereffect:hover a.info {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -ms-transform: translatey(0);
+  -webkit-transform: translatey(0);
+  transform: translatey(0);
+}
+
+.hovereffect:hover a.info {
+  -webkit-transition-delay: .2s;
+  transition-delay: .2s;
+}
+
+/* INDEX HOME PAGE ############################################# */
+
+.input-group.md-form.form-sm.form-1 input{
+  border: 1px solid #bdbdbd;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.input-group.md-form.form-sm.form-2 input {
+  border: 1px solid #bdbdbd;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.input-group.md-form.form-sm.form-2 input.red-border {
+  border: 1px solid #ef9a9a;
+}
+.input-group.md-form.form-sm.form-2 input.lime-border {
+  border: 1px solid #cddc39;
+}
+.input-group.md-form.form-sm.form-2 input.amber-border {
+  border: 1px solid #ffca28;
+}
+
+/* INDEX HOME PAGE ############################################# */
+/* Contact Me */
+
+section.contact-me {
+    border-bottom: none;
+}
+
+#contact input {
+    background-color: rgba(250,250,250,0.1);
+    border: 1px solid rgba(250,250,250,1);
+    border-radius: 0px;
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+
+}
+
+#contact input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#contact textarea {
+    background-color: rgba(250,250,250,0.1);
+    border: 1px solid rgba(250,250,250,1);
+    border-radius: 0px;
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 14px;
+    height: 180px;
+    max-height: 220px;
+    line-height: 40px;
+    width: 100%;
+
+}
+
+#contact textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#contact {
+    text-align: center;
+}
+
+
+
+.map{
+	width: 100% ;
+	height: 450px ;
+
+	border: 2%;
+	border-color:red;
+	frameborder: 5 ;
+	allowfullscreen:true ;
+	aria-hidden: false ;
+	tabindex: 10;
+}
+
+
+/* Simple Border Button */
+.border-neon {
+    background-color: transparent;
+    border: 2px solid pink;
+    color: pink;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.border-neon:hover, .border-neon:focus {
+    -webkit-box-shadow: inset 0px 0px 8px 3px #ff94b8;
+    box-shadow: 0px 0px 10px 3px #ff94b8, inset 0px 0px 10px 3px #ff94b8;
+    border-color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff94b8, 0 0 40px #ff94b8, 0 0 50px #ff94b8, 0 0 60px #ff94b8, 0 0 70px #ff94b8
+}
+
+
+
+

@@ -1,0 +1,62 @@
+{% extends 'classroom/base.html' %}
+{% block content %}
+
+     <div class="container ">
+		<div class="row">
+            <ol class="col-12 breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'classroom:class_student_list' %}">Class Students</a></li>
+                <li class="breadcrumb-item active">Marks Profile</li>
+            </ol>
+
+        </div>
+
+          <div class="section-heading">
+            <h2 class="">Marks profile of {{ student.name }}</h2>
+            <div class="line-dec"></div>
+
+          </div>
+
+  <div class="jumbotron ">
+{% if given_marks.count == 0 %}
+<h2 class="text-dark">You have not given any marks to {{ student.name }}.</h2>
+{% else %}
+
+
+ <div class="row row-content">
+            <div class="col-12 col-sm-12">
+
+ <div class="table-responsive">
+                    <table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"> No</th>
+      <th scope="col">Sub</th>
+      <th scope="col">Marks </th>
+      <th scope="col">Total Marks</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for marks in given_marks %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <th>{{ marks.subject_name }}</th>
+      <th>{{ marks.marks_obtained }}</th>
+      <th>{{ marks.maximum_marks }}</th>
+      <th> <a class="btn btn-primary" href="{% url 'classroom:update_marks' pk=marks.pk %}">Update</a> </th>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<br>
+</div>
+</div>
+</div>
+{% endif %}
+<p> <a class="btn btn-danger" href="{% url 'classroom:enter_marks' pk=student.pk %}">Add marks</a> </p>
+
+</div>
+</div>
+
+{% endblock %}
